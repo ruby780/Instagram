@@ -6,6 +6,7 @@ target 'Instagram' do
   use_frameworks!
 
   pod 'Parse'
+  pod 'Pastel'
 
   target 'InstagramTests' do
     inherit! :search_paths

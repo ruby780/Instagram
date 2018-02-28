@@ -61,12 +61,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
         
         let post = posts[indexPath.row]
-        cell.captionLabel.text = post.caption
+        
+        // Make the username bold and combine username and caption
+        // Assign usernamePlusCaption to captionLabel
+        let caption = NSMutableAttributedString(string: " \(post.caption)")
+        let attrs = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 17)]
+        let usernamePlusCaption = NSMutableAttributedString(string:post.author.username!, attributes:attrs)
+        usernamePlusCaption.append(caption)
+        cell.captionLabel.attributedText =  usernamePlusCaption
         
         // Get the current date and set the date of the post based on it
         let createdDate = post.createdAt
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
-        formatter.timeZone = TimeZone(abbreviation: "UTC")
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateStyle = .medium
         cell.dateLabel.text = formatter.string(from: createdDate!)

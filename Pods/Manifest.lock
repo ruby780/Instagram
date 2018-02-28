@@ -4,14 +4,17 @@ PODS:
     - Parse/Core (= 1.16.0)
   - Parse/Core (1.16.0):
     - Bolts/Tasks (~> 1.9)
+  - Pastel (0.3.0)
 
 DEPENDENCIES:
   - Parse
+  - Pastel
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Parse: 5b36dc2c2f0a2fd82a257ae018bc3d68cf2c24e7
+  Pastel: 738740c84f2b15bbcd96ebe99c4e6c2f5dd42262
 
-PODFILE CHECKSUM: fa471c31f63cfcd9563034537bca9890520bde35
+PODFILE CHECKSUM: 275508a971cfecbad3e2c54b7a78a97717764d79
 
 COCOAPODS: 1.4.0

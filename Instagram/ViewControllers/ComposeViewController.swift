@@ -39,7 +39,7 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func postImage(_ sender: Any) {
         let caption = captionField.text ?? ""
-        let image = resize(image: postImageView.image!, newSize: CGSize(width: 500, height: 500))
+        let image = resize(image: postImageView.image!, newSize: CGSize(width: 300, height: 300))
         
         Post.postUserImage(image: image, withCaption: caption) { (success: Bool, error: Error?) in
             if let error = error {
@@ -55,7 +55,7 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         // Get the image captured by the UIImagePickerController
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        //let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
         // Do something with the images (based on your use case)
         postImageView.image = originalImage
